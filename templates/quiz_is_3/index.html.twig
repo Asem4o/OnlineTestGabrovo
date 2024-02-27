@@ -39,6 +39,7 @@
             <option value="5">Тест 5 организация на компютъра</option>
             <option value="6">Тест 6 организация на компютъра</option>
             <option value="7">Тест 7 организация на компютъра</option>
+            <option value="8">Тест 8 организация на компютъра</option>
         </select>
     </div>
 </form>
@@ -85,6 +86,9 @@
             Вашият отговор: {% if result.isCorrect %}<span style="color: green;">{{ result.userAnswerTexts }}</span>{% else %}<span style="color: red;">{{ result.userAnswerTexts }}</span>{% endif %} е {% if result.isCorrect %}<strong style="color: green;">правилен</strong>{% else %}<strong style="color: red;">грешен</strong>. Верният отговор е: <span style="color: black;">{{ result.correctAnswerTexts }}</span>{% endif %}.
         </div>
     {% endfor %}
+    {% if grade is not null %}
+        <h2>Оценката ти е : {{ grade }}</h2>
+    {% endif %}
 {% else %}
     <p>Моля, отговорете на въпросите и натиснете бутона за проверка.</p>
 {% endif %}
